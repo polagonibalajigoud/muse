@@ -1,0 +1,82 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-cream: #FAF7F2;
+    --text-charcoal: #171717;
+    --accent-cobalt: #0047AB;
+    --accent-vermilion: #E34234;
+    --accent-lilac: #B8A1D9;
+    --accent-yellow: #E5C158;
+  }
+
+  body {
+    background-color: var(--bg-cream);
+    color: var(--text-charcoal);
+    font-family: 'Plus Jakarta Sans', sans-serif;
+    overflow-x: hidden;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: 'Syne', 'Cormorant Garamond', serif;
+  }
+}
+
+/* Subtle SVG Paper Texture Grain Overlay */
+.bg-grain {
+  position: relative;
+}
+
+.bg-grain::before {
+  content: "";
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  opacity: 0.035;
+  pointer-events: none;
+  z-index: 9999;
+  background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.8' numOctaves='3' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E");
+}
+
+/* Editorial Glass & Borders */
+.border-editorial {
+  border-color: rgba(23, 23, 23, 0.12);
+}
+
+.glass-editorial {
+  background: rgba(250, 247, 242, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+/* Smooth Canvas Gradients */
+.radial-glow-cobalt {
+  background: radial-gradient(circle, rgba(0, 71, 171, 0.15) 0%, rgba(250, 247, 242, 0) 70%);
+}
+
+.radial-glow-vermilion {
+  background: radial-gradient(circle, rgba(227, 66, 52, 0.15) 0%, rgba(250, 247, 242, 0) 70%);
+}
+
+.radial-glow-lilac {
+  background: radial-gradient(circle, rgba(184, 161, 217, 0.25) 0%, rgba(250, 247, 242, 0) 70%);
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #FAF7F2;
+}
+::-webkit-scrollbar-thumb {
+  background: #D9D2C5;
+  border-radius: 3px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #B5AD9E;
+}
